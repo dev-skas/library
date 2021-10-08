@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title><link rel="stylesheet" href="/src/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body class="bg-dark">   
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class=" container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="/signin" class=" btn text-light">
+        <i class="bi bi-box-arrow-right p-1"> </i>Log Out
+    </a>
+      
+      <div class="offcanvas offcanvas-start bg-dark text-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header text-light">
+          <h5 class="offcanvas-title " id="offcanvasNavbarLabel">Library</h5>
+          <button type="button" class="btn-close btn-close-white " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+              </form> 
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+           
+            <%for(i=0;i<nav.length;i++){%>
+              <li class="nav-item">
+                <a class="nav-link "  href="<%=nav[i].link%>"><%=nav[i].name%></a>
+              </li>
+              <%}%>
+          
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+</nav>
+    
+
+<div class="mt-lg-5">
+    <div class=" rounded bg-white container mt-3 p-md-5">
+
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img src="/images/<%=book.image%>" style="width: 95%;"  class=" mb-3" alt="">                
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card">
+                    <h3  class="card-header"> <%=book.name%></h3>
+                   
+                  
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Author :<b> <%=book.author%></b></li>
+                <li class="list-group-item">Category: <b> <%=book.gener%></b></li>
+                <li class="list-group-item">Year: <b> <%=book.year%></b></li>
+                <li class="list-group-item "> About <b> <%=book.name%></b><div class="p-2">
+
+              <p> <%=book.short%></p>
+              </div></li>
+              </ul>
+                
+                
+                </div>
+            </div>
+        
+            
+        
+        
+        
+        </div>
+        </div>
+
+    </div>
+
+    <footer class="pt-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+          
+            <p>Developed By  <i class="bi bi-heart"> </i>  Syamjith</p>      
+    
+           
+        </div>
+    
+    </footer>
+    <script src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+
+  </head>
+  <body  class="text-center text-dark bg-light">
+    
+<main class="form-signin ">
+  <img class="mb-4" src="/images/login.png" alt="" width="158" height="158">
+
+  <form action="/signin" onsubmit="return validate();">
+    <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+    <p style="color: red;" id="error" hidden> Invalid username / Password</p>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="uname" placeholder="Username">
+      <label for="uname">Username</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="pwd" placeholder="Password">
+      <label for="pwd">Password</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="repwd" placeholder="Retype Password">
+      <label for="repwd">Retype Password</label>
+    </div>
+    <a class="text-dark  "href="/signin">Already have an account</a>
+   
+    
+    <button class="mt-4 w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
+  </form>
+</main>
+
+
+<script src="/js/script.js"></script>
+    
+  </body>
+</html>
