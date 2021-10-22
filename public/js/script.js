@@ -2,23 +2,21 @@ function check(){
     var uname = document.getElementById("uname").value;
     var pwd = document.getElementById("pwd").value;
 
-  if(uname =="admin" && pwd=="12345"){
-        document.getElementById("error").setAttribute("hidden",true);
-        document.getElementById("form").action ="/books"
-
-      return true
-
-    }else if(uname =="syamjith" && pwd=="12345"){
-        document.getElementById("error").setAttribute("hidden",true);
-        document.getElementById("form").action ="/admin"
-
-      return true
-
-    }else{
+    if(uname.trim()=="" ){
+        document.getElementById("error").innerText="You can't leave  Username field blank";
         document.getElementById("error").removeAttribute("hidden",true);
         return false
+    
 
+    }else  if(pwd.trim()=="" ){
+        document.getElementById("error").innerText="You can't leave  Password field blank";
+        document.getElementById("error").removeAttribute("hidden",true);
+        return false
+    }else{
+        return true
     }
+
+    
 }
 
 function validate(){
@@ -86,3 +84,4 @@ function addauthor(){
         return true
     }
 }
+

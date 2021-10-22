@@ -60,7 +60,20 @@ body::-webkit-scrollbar {
     -moz-user-select: none;
     user-select: none;
   }
-
+  .tableContainer{
+   
+    
+    
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow-x: scroll;
+  
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    
+    }
+    .tableContainer::-webkit-scrollbar {
+    display: none;
+    }
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
       font-size: 3.5rem;

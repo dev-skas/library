@@ -37,35 +37,41 @@
 
        <div class="form-signin  mt-5 text-white">
         <h2 class="text-center mb-3">Add New Book</h2>
-        <form method="GET" action="" onsubmit="return addbook()">
+        <form method="post" action="/admin/addbook/add" enctype="multipart/form-data" onsubmit="return addbook()">
             <div class=" mb-3">
             <label for="name"class="form-label">Book Name</label>
-            <input id="name" class="form-control" type="text">
+            <input id="name" name="name" class="form-control" type="text">
             </div>
     
             <div class=" mb-3">
             <label  for="authorName"class="form-label">Author Name</label>
-            <input id="authorName" class="form-control" type="text">
+            <input id="authorName" list="authorName" name="authorName"  class="form-control ">
+             <!-- <input list="browsers" name="browser"> -->
+            <datalist  id="authorName">
+                <%for(i=0;i<authors.length;i++){%>
+              <option value="<%=authors[i].name%>">
+              <%}%>
+              </datalist>
             </div>
     
             <div class=" mb-3">
             <label for="Category"class="form-label">Category</label>
-            <input id="Category" class="form-control" type="text">
+            <input id="Category" name="Category"  class="form-control" type="text">
             </div>
     
             <div class=" mb-3">
             <label for="year"class="form-label">Year</label>
-            <input id="year" class="form-control" type="text">
+            <input id="year" name="year"  class="form-control" type="number">
             </div>
     
             <div class=" mb-3">
             <label for="about"class="form-label">About Book</label>
-            <input id="about" class="form-control"type="text">
+            <input id="about" name="about"  class="form-control"type="text">
             </div>
     
             <div class=" mb-3">
-            <label for="file"class="form-label">image</label>
-            <input id="file" accept="image/*" class="form-control" type="file" >        
+            <label for="image"class="form-label">image</label>
+            <input id="file" name="image"  accept="image/*" class="form-control" type="file" >        
             </div>
             <button class="form-control btn btn-primary" type="submit">Add Book</button>
         </form>
@@ -88,3 +94,4 @@
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+

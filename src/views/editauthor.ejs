@@ -37,28 +37,28 @@
 
 
        <div class="form-signin  mt-5 text-white">
-        <h2 class="text-center mb-3">Add New Author</h2>
+        <h2 class="text-center mb-3">Edit Author</h2>
         <form method="post" action="/admin/addauthor/add" enctype="multipart/form-data" onsubmit="return addauthor()">
             
     
             <div class=" mb-3">
             <label  for="authorName"class="form-label">Author Name</label>
-            <input id="authorName" name="authorName" class="form-control" type="text">
+            <input id="authorName" name="authorName" class="form-control" type="text" value="<%=authors.name%>">
             </div>
     
             <div class=" mb-3">
             <label for="Country"class="form-label">Country</label>
-            <input id="Country" name="Country" class="form-control" type="text">
+            <input id="Country" name="Country" class="form-control" type="text" value="<%=authors.country%>">
             </div>
     
             <div class=" mb-3">
             <label for="DOB"class="form-label">DOB</label>
-            <input id="DOB" name="DOB" class="form-control" type="date">
+            <input id="DOB" name="DOB" class="form-control" type="date" value="<%=authors.year%>">
             </div>
     
             <div class=" mb-3">
             <label for="about"class="form-label">About Author</label>
-            <input id="about" name="about" class="form-control"type="text">
+            <input id="about" name="about" class="form-control"type="text" value="<%=authors.short%>">
             </div>
     
             <div class=" mb-3">

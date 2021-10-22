@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Author</title>
+    <title>Add Book</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 </head>
@@ -35,39 +35,45 @@
        </nav>
 
 
-
        <div class="form-signin  mt-5 text-white">
-        <h2 class="text-center mb-3">Add New Author</h2>
-        <form method="post" action="/admin/addauthor/add" enctype="multipart/form-data" onsubmit="return addauthor()">
-            
+        <h2 class="text-center mb-3">Edit Book</h2>
+        <form method="post" action="/admin/addbook/add" enctype="multipart/form-data" onsubmit="return addbook()">
+            <div class=" mb-3">
+            <label for="name"class="form-label">Book Name</label>
+            <input id="name" name="name" class="form-control" type="text" value="<%=books.name%>">
+            </div>
     
             <div class=" mb-3">
             <label  for="authorName"class="form-label">Author Name</label>
-            <input id="authorName" name="authorName" class="form-control" type="text">
+            <input id="authorName" type="text" name="authorName"  class="form-control " value="<%=books.author%>">
+   
+           
             </div>
     
             <div class=" mb-3">
-            <label for="Country"class="form-label">Country</label>
-            <input id="Country" name="Country" class="form-control" type="text">
+            <label for="Category"class="form-label">Category</label>
+            <input id="Category" name="Category"  class="form-control" type="text" value="<%=books.gener%>">
             </div>
     
             <div class=" mb-3">
-            <label for="DOB"class="form-label">DOB</label>
-            <input id="DOB" name="DOB" class="form-control" type="date">
+            <label for="year"class="form-label">Year</label>
+            <input id="year" name="year"  class="form-control" type="number" value="<%=books.year%>">
             </div>
     
             <div class=" mb-3">
-            <label for="about"class="form-label">About Author</label>
-            <input id="about" name="about" class="form-control"type="text">
+            <label for="about"class="form-label">About Book</label>
+            <input id="about" name="about"  class="form-control"type="text" value="<%=books.short%>">
             </div>
     
             <div class=" mb-3">
-            <label for="file"class="form-label">image</label>
-            <input id="file" name="file" accept="image/*" class="form-control" type="file" >        
+            <label for="image"class="form-label">image</label>
+            <input id="file" name="image"  accept="image/*" class="form-control" type="file" ">        
             </div>
-            <button class="form-control btn btn-primary" type="submit">Add Author</button>
+            <button class="form-control btn btn-primary" type="submit">Add Book</button>
         </form>
     </div>
+    
+
 
  
 
@@ -81,6 +87,7 @@
 
 </footer>
 <script src="/js/script.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+

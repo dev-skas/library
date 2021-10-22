@@ -18,9 +18,13 @@ const menu =[
     {
         link:'/admin',name:'Home',target:'_self'
     },{
-        link:'/addbook',name:'Add Book',target:'_self'
+        link:'/admin/books',name:'Books',target:'_self'
     },{
-        link:'/addauthor',name:'Add Author',target:'_self'
+        link:'/admin/authors',name:'Authors',target:'_self'
+    },{
+        link:'/admin/addbook',name:'Add Book',target:'_self'
+    },{
+        link:'/admin/addauthor',name:'Add Author',target:'_self'
     },{
         link:'/books',name:'Preview',target:'_blank'
     }
@@ -35,6 +39,9 @@ const addbookRouter =require('./src/routes/addbookRoutes')(menu);
 const addauthorRouter =require('./src/routes/addauthorRoutes')(menu);
 
 
+
+
+app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));
 app.set('view engine','ejs');
 app.set('views','./src/views');
@@ -43,8 +50,8 @@ app.use('/authors',authorRouter);
 app.use('/signup',signupRouter);
 app.use('/signin',signinRouter);
 app.use('/admin',adminRouter);
-app.use('/addbook',addbookRouter);
-app.use('/addauthor',addauthorRouter);
+app.use('/admin/addbook',addbookRouter);
+app.use('/admin/addauthor',addauthorRouter);
 
 
 
