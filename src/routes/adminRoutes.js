@@ -69,7 +69,8 @@ adminRouter.get('/books/delete/:id',(req,res)=>{
       const id = req.params.id
       
       bookdata.deleteOne({_id:id},(err,result)=>{
-        res.redirect('/admin/books');
+        res.redirect('/admin/books')
+        
       })
   
 });

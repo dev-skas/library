@@ -37,7 +37,7 @@
 
        <div class="form-signin  mt-5 text-white">
         <h2 class="text-center mb-3">Edit Book</h2>
-        <form method="post" action="/admin/addbook/add" enctype="multipart/form-data" onsubmit="return addbook()">
+        <form method="post" action="/admin/addbook/edit/<%=books._id%>" enctype="multipart/form-data" onsubmit="return addbook()">
             <div class=" mb-3">
             <label for="name"class="form-label">Book Name</label>
             <input id="name" name="name" class="form-control" type="text" value="<%=books.name%>">

@@ -32,12 +32,17 @@
     
         </div>
        </nav>
-
-  <div class="tableContainer bg-light mx-lg-5 mt-5">  
+       <% if(locals.err_msg) { %>
+        <div class="alert alert-<%=type%> alert-dismissible fade show" role="alert">
+          <strong><%= err_msg %></strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+       <div class="tableContainer bg-light mx-lg-5 mt-5">  
      
-        <table class="table  table-bordered  table-striped">
+        <table class="table table-responsive table-bordered  table-striped">
        
-            <tr>
+            <tr class="bg-dark text-white">
               <th>SN</th>
               <th>Image</th>
               <th>Name</th>
@@ -56,8 +61,8 @@
                 <td><%=books[i].name%></td>
                 <td><%=books[i].author%></td>
                 <td><%=books[i].gener%></td>
-                <td><a href="books/edit/<%=books[i]._id%>"><i class="bi bi-pencil-square fs-5 text-success"></i></a>
-                <a href="books/delete/<%=books[i]._id%>"><i class="bi bi-trash text-danger fs-5"> </i></a></td>
+                <td><a href="books/edit/<%=books[i]._id%>"><i class="bi bi-pencil-square mx-1 fs-5 text-success"></i></a>
+                <a href="books/delete/<%=books[i]._id%>"><i class="bi bi-trash text-danger mx-1 fs-5"> </i></a></td>
               </tr>
               <%}%>
             </tbody>

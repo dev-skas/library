@@ -42,6 +42,7 @@ const addauthorRouter =require('./src/routes/addauthorRoutes')(menu);
 
 
 app.use(express.urlencoded({extended:true}));
+
 app.use(express.static('./public'));
 app.set('view engine','ejs');
 app.set('views','./src/views');

@@ -13,17 +13,22 @@ signinRouter.post('/check',(req,res)=>{
      if(username =="admin" && password=="12345"){
         res.redirect('/admin')
      }else{
-        userdata.findOne({uname: username})
-        .then((user)=>{
 
-         if(password == user.pwd){
-                res.redirect('/books')
+        userdata.findOne({uname: username},(err,user)=>{
+         if(user == undefined){
+            msg = "invalid User";
+            return res.render('signin', { err_msg:msg,type:'danger'} )
+         }else{
+            if(password == user.pwd){
+               res.redirect('/books')
 
-          }else{
-           console.log("invalid user")
-          }
-        
+             }else{
+                   msg = "Incorrect Password";
+                   return res.render('signin', { err_msg: msg, type:'warning' } )
+              }
+         }
         })
+ 
      }
    
 

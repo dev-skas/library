@@ -6,8 +6,6 @@ const bookdata = require('../model/bookdata');
 const multer = require('multer');
 
 
-
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, './public/images');
@@ -56,9 +54,27 @@ addbookRouter.post('/add',upload,(req,res)=>{
 
     var book = bookdata(item);
     book.save();
-    res.redirect('/books');
+        res.redirect('/admin/books');
+
    });
 
+   addbookRouter.post('/edit/:id',upload,(req,res)=>{
+    
+    const id = req.params.id
+  console.log(id)
+
+    bookdata.findByIdAndUpdate(id,{
+        name:  req.body.name,
+        author: req.body.authorName,
+        gener:  req.body.Category,
+        year:req.body.year,
+        short: req.body.about,
+        image: req.file.filename
+    },(err,result)=>{
+        res.redirect('/admin/books');
+      })
+
+   });
    
 return addbookRouter
 }

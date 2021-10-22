@@ -41,7 +41,8 @@ addauthorRouter.post('/add',upload,(req,res)=>{
     }
     var author = authordata(item);
     author.save();
-    res.redirect('/authors');
+    res.redirect('/admin/authors');
+
 });
 
 return addauthorRouter
