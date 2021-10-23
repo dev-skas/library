@@ -1,38 +1,49 @@
 const express = require('express');
 const adminRouter = express.Router();
 const bookdata = require('../model/bookdata');
+const userdata = require('../model/userdata')
 const authordata = require('../model/authordata');
+
+
+
+
 
 
 
 function router(menu){
     
-   
 
-    adminRouter.get('/',(req,res)=>{   
 
+    adminRouter.get('/',(req,res)=>{  
+
+     
+           
         
-        let books =[];
-        var authors =[];
-        var users =[];
-
-        
-        
-        bookdata.find({},(error,data)=>{
-            books = data
-        })
-
-        authordata.find({},(error,data)=>{
-            authors = data
-        }) 
-
-        
-            res.render("admin",{
+         bookdata.find({},(error,data)=>{
+         var  books = data; 
+           authordata.find({},(error,data)=>{
+           var authors = data
+            userdata.find({},(error,data)=>{
+               var users = data
+               
+               res.render("admin",{
                 menu,
                 books,
                 authors,
+                users,
               
-            });
+            })
+             }) 
+         }) 
+         })
+        
+      
+        
+        
+
+   
+            
+
           
     });
 
@@ -52,11 +63,25 @@ function router(menu){
 
 });
 
+
+
 adminRouter.get('/authors',(req,res)=>{       
     authordata.find().then((authors)=>{
         res.render("adminauthor",{
             menu,
             authors
+          
+        });
+    })
+   
+
+});
+
+adminRouter.get('/users',(req,res)=>{       
+   userdata.find().then((users)=>{
+        res.render("users",{
+            menu,
+           users
           
         });
     })
@@ -84,6 +109,18 @@ adminRouter.get('/authors/delete/:id',(req,res)=>{
     })
   
 });
+
+adminRouter.get('/users/delete/:id',(req,res)=>{       
+    
+    const id = req.params.id
+    
+    userdata.deleteOne({_id:id},(err,result)=>{
+      res.redirect('/admin/users');
+    })
+  
+});
+
+
 
 adminRouter.get('/authors/edit/:id',(req,res)=>{       
     

@@ -32,32 +32,35 @@
     
         </div>
        </nav>
-
-  <div class="tableContainer bg-light mx-lg-5 mt-5">  
+       <% if(locals.err_msg) { %>
+        <div class="alert alert-<%=type%> alert-dismissible fade show" role="alert">
+          <strong><%= err_msg %></strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+       <div class="tableContainer bg-light mx-lg-5 mt-5">  
      
-        <table class="table  table-bordered  table-striped">
+        <table class="table table-responsive table-bordered  table-striped">
        
             <tr class="bg-dark text-white">
-              <th style="width: 50px;">SN</th>
-              <th style="width: 90px;">Image</th>
-              <th>Name</th>
-              <th>Country</th>
-              <th>DOB</th>
-              <th style="width: 90px;">Action</th>
+              <th>SN</th>
+              <th>User Name</th>
+              <th>Password</th>
+              <th style="width: 50px;">Action</th>
+             
              
             </tr>
     
             <tbody>
 
-            <%for(i=0;i<authors.length;i++){%>
+            <%for(i=0;i<users.length;i++){%>
              <tr>
                 <td><%=i+1%></td>
-                <td><img style="height: 80px; width: 80px;" src="/images/<%=authors[i].image%>" alt=""></td>
-                <td><%=authors[i].name%></td>
-                <td><%=authors[i].country%></td>
-                <td><%=authors[i].year%></td>
-                <td><a href="authors/edit/<%=authors[i]._id%>"><i class="bi bi-pencil-square fs-5 text-success"></i></a>
-                <a href="authors/delete/<%=authors[i]._id%>"><i class="bi bi-trash text-danger fs-5"> </i></a></td>
+                <td><%=users[i].uname%></td>
+                <td><%=users[i].pwd%></td>
+                <td>                <a href="users/delete/<%=users[i]._id%>"><i class="bi bi-trash text-danger mx-1 fs-5"> </i></a></td>
+
+                </td>
               </tr>
               <%}%>
             </tbody>
@@ -69,7 +72,7 @@
 
 
 
-<footer class="pt-5 bg-dark text-white text-center ">
+<footer class="pt-5 bg-dark text-white text-center position-absolute bottom-0">
     <div class="container">
       
         <p>Developed By  <i class="bi bi-heart"> </i>  Syamjith</p>      

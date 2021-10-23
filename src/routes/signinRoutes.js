@@ -15,7 +15,7 @@ signinRouter.post('/check',(req,res)=>{
      }else{
 
         userdata.findOne({uname: username},(err,user)=>{
-         if(user == undefined){
+         if(user == null){
             msg = "invalid User";
             return res.render('signin', { err_msg:msg,type:'danger'} )
          }else{

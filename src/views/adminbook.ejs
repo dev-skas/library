@@ -43,12 +43,13 @@
         <table class="table table-responsive table-bordered  table-striped">
        
             <tr class="bg-dark text-white">
-              <th>SN</th>
-              <th>Image</th>
+              <th style="width: 50px;">SN</th>
+
+              <th style="width: 90px;" >Image</th>
               <th>Name</th>
               <th>Author</th>
-              <th>Gener</th>
-              <th>Action</th>
+              <th>Category</th>
+              <th style="width: 90px;">Action</th>
              
             </tr>
     
@@ -57,7 +58,7 @@
             <%for(i=0;i<books.length;i++){%>
              <tr>
                 <td><%=i+1%></td>
-                <td><img style="height: 20px; width: 20px;" src="/images/<%=books[i].image%>" alt=""></td>
+                <td><img style="height: 80px; width: 80px;" src="/images/<%=books[i].image%>" alt=""></td>
                 <td><%=books[i].name%></td>
                 <td><%=books[i].author%></td>
                 <td><%=books[i].gener%></td>
@@ -74,7 +75,7 @@
 
 
 
-<footer class="pt-5 bg-dark text-white text-center position-absolute bottom-0">
+<footer class="pt-5 bg-dark text-white text-center ">
     <div class="container">
       
         <p>Developed By  <i class="bi bi-heart"> </i>  Syamjith</p>      

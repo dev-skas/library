@@ -58,10 +58,12 @@ function addbook(){
     var Category = document.getElementById("Category").value;
     var year = document.getElementById("year").value;
     var about = document.getElementById("about").value;
+    var file = document.getElementById("file");
 
 
     if(name.trim()==""||authorName.trim()==""|| Category.trim()==""||year.trim()==""||about.trim()==""){
         alert("You can't leave field blank");
+       
         return false
 
     }else{

@@ -9,14 +9,28 @@ const userdata = require('../model/userdata')
 
 
     signupRouter.post('/adduser',(req,res)=>{
-        var item = {
-            uname:req.body.uname,
-            pwd:req.body.pwd,
 
-        }
-        var user = userdata(item);
-        user.save();
-        res.redirect('/signin');
+       
+
+
+        userdata.findOne({uname: req.body.uname},(err,user)=>{
+         if(user == null){
+            var item = {
+                uname:req.body.uname,
+                pwd:req.body.pwd,
+    
+            }
+              var user = userdata(item);
+              user.save();
+              res.redirect('/signin');
+         }else{
+
+            msg = "User Alreday Exist";
+            return res.render('signup', { err_msg:msg,type:'danger'} )
+         }
+
+        })
+       
     });
 
 

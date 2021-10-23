@@ -22,13 +22,14 @@ const menu =[
     },{
         link:'/admin/authors',name:'Authors',target:'_self'
     },{
+        link:'/admin/users',name:'Users',target:'_self'
+    },{
         link:'/admin/addbook',name:'Add Book',target:'_self'
     },{
         link:'/admin/addauthor',name:'Add Author',target:'_self'
     },{
         link:'/books',name:'Preview',target:'_blank'
     }
-
 ];
 const bookRouter =require('./src/routes/bookroutes')(nav);
 const authorRouter = require('./src/routes/authorRoutes')(nav);
