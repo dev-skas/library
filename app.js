@@ -29,6 +29,8 @@ const menu =[
         link:'/admin/addauthor',name:'Add Author',target:'_self'
     },{
         link:'/books',name:'Preview',target:'_blank'
+    },{
+        link:'/signin',name:'Log Out'
     }
 ];
 const bookRouter =require('./src/routes/bookroutes')(nav);
